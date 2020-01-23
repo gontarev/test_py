@@ -45,3 +45,10 @@ def test_3(fixt1):
 def test_zero_division():
     with pytest.raises(ZeroDivisionError):
         1 / 0
+
+def test_int_convert():
+    s = "вфыпыапв"
+    with pytest.raises(ValueError) as excinfo:
+        i = int(s)
+    assert 'invalid literal for int() with base 10' in str(excinfo.value)
+    print('\n- test_4')
